@@ -1,51 +1,43 @@
-package A;
+package jeden;
 
-import java.awt.List;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
+import java.util.TreeMap;
+
+
 
 public class main {
 	
-	public <T> void wypisz(ArrayList<T> a){
-		//System.out.println(a);
+	public <T> void wypisz(List<T> a){
 		for(int i = 0; i<a.size(); i++){
 			System.out.println(a.get(i));
 		}
 	}
-
+	
+	
+	
+	
 	public static void main(String[] args) {
-		main hehe = new main();
-		Test jeden;
-		String imie,nazwisko;
-		int pesel;
+		List<People> lista = new ArrayList<>();
+		lista.add(new People("Maciej", "Iwanski", 24));
+		lista.add(new People("Franek", "Zgie≈Ç", 10));
+		lista.add(new People("Lepold", "Szow", 23));
+		lista.add(new People("Gibon", "Andrutkiewicz", 42));
+		lista.add(new People("Andrzej", "Duda", 1));
+		lista.add(new People("Lech", "Pawlak", 84));
+		lista.add(new People("Beata", "Szyd≈Ço", 100));
 		
-		ArrayList<Test> lista = new ArrayList();
 		
+		main nowe = new main();
 		
-		Scanner read = new Scanner(System.in);					//Wczytywanie z pliku
-		System.out.println("Imie uzytkownika:");
-		imie = read.nextLine();
-		System.out.println("Nazwisko uzytkownika:");
-		nazwisko = read.nextLine();
-		System.out.println("Pesel uzytkownika:");
-		pesel = read.nextInt();
-		
-		lista.add(new Test(imie,nazwisko,pesel));
-		lista.add(new Test());
-		lista.add(new Test("Bogdan", "£•∆KI", 1234));
-		
-//		for(Test a: lista){
-//			a.wypisz();
-//		}
-		
-		hehe.wypisz(lista);
-		Integer[] pom = new Integer[]{1,2,3,4,5,6,7,8,9};
-		ArrayList<Integer> liczby = new ArrayList<>();
-		liczby.addAll(Arrays.asList(pom));
-		//liczby.add(1);
-		hehe.wypisz(liczby);
+		System.out.println("Przed sortowaniem:");
+		nowe.wypisz(lista);
+		System.out.println("Po sortowaniu:");
+		Collections.sort(lista);
+		nowe.wypisz(lista);
 		
 	}
-
 }
